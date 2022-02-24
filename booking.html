@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>6Meem - Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">
+          <img src="images/logo/Base-SIgn_Mainlogo_icon.svg">
+      </label>
+      <ul>
+        <li><a  href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <section class="booking">
+        <div class="steps">
+            <form id="msform" >
+                <!-- progressbar -->
+                <ul class="UL" id="progressbar">
+                  <li class="LI active"></li>
+                  <li class="LI"></li>
+                  <li class="LI"></li>
+                  <li class="LI"></li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                  <h2 class="fs-title">Select Your Ads Type.</h2>
+                  <h3 class="fs-subtitle">Step 1</h3>
+                  <div class="_container">
+                    <div class="list">
+                      <div class="form-element">
+                        <input type="checkbox" name="platform" value="instagram" id="instagram">
+                        <label for="instagram">
+                          <div class="icon">
+                            <i class="fa-solid fa-person-skating"></i>
+                            </div>
+                          <div class="title">
+                            Health and fitness
+                          </div>
+                        </label>
+                      </div>
+                      <div class="form-element">
+                        <input type="checkbox" name="platform" value="twitch" id="twitch">
+                        <label for="twitch">
+                          <div class="icon">
+                            <i class="fa-solid fa-spa"></i>
+                          </div>
+                          <div class="title">
+                            Beauty
+                          </div>
+                        </label>
+                      </div>
+                      <div class="form-element">
+                        <input type="checkbox" name="platform" value="slack" id="slack">
+                        <label for="slack">
+                          <div class="icon">
+                            <i class="fa-solid fa-dice"></i>                      
+                          </div>
+                          <div class="title">
+                            Entertainment
+                          </div>
+                        </label>
+                      </div>
+                      <div class="form-element">
+                        <input type="checkbox" name="platform" value="twitter" id="twitter">
+                        <label for="twitter">
+                          <div class="icon">
+                            <i class="fa-solid fa-utensils"></i>
+                          </div>
+                          <div class="title">
+                            Food and beverage
+                          </div>
+                        </label>
+                      </div>
+                      <div class="form-element">
+                        <input type="checkbox" name="platform" value="pinterest" id="pinterest">
+                        <label for="pinterest">
+                          <div class="icon">
+                            <i class="fa-solid fa-briefcase-medical"></i>
+                          </div>
+                          <div class="title">
+                            Pharma
+                          </div>
+                        </label>
+                      </div>
+                      
+                      
+                    </div>
+                  </div>                  
+                  <input type="button" name="next" class="next action-button" value="Next" />
+                  
+                </fieldset>
+                <fieldset>
+                  <h2 class="fs-title">Add Your Advertisement:</h2>
+                  <h3 class="fs-subtitle">Step 2</h3>
+                  <div class="col-12 uploadFile">
+                    <input type="file" id="actual-btn" hidden/>
+
+                    <!-- our custom upload button -->
+                    <label for="actual-btn"><i class="fa-solid fa-upload"></i>&nbsp; Choose File</label>
+
+                    <!-- name of file chosen -->
+                    <span id="file-chosen">No file chosen</span>
+                    
+                </div>
+
+                <div class="col-12">
+                    <img src="images/screen.jpg" style="width:13rem; height:18rem;margin: 2rem;">
+                </div>
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
+                  <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                  <h2 class="fs-title">Advertisement Details:</h2>
+                  <h3 class="fs-subtitle">Step 3</h3>
+                  <input type="text" name="Bname" placeholder="Brand Name :*" />
+                  <input type="text" name="Cname" placeholder="Campaign Name: *" />
+                  <input type="date"  placeholder="Campaign Start Date: *" min="2022-06-01" max="2030-12-31"/>
+                  <!-- <label class="fieldlabels">Campaign Duration: *</label> -->
+                    <br>
+                    <select  >
+                      <option selected="true" disabled="disabled" >Campaign Duration: *</option>
+                      <option value="1">1 Week</option>
+                      <option value="2">2 week</option>
+                      <option value="3">3 week</option>
+                      <option value="4">4 week</option>
+                      <option value="5">5 week</option>
+                      <option value="6">6 week</option>
+                      <option value="7">7 week</option>
+                      <option value="8">8 week</option>
+                      <option value="9">9 week</option>
+                      <option value="10">10 week</option>
+                      
+                    </select>
+                    
+                  <input type="number" min="1" max="100" placeholder="Screens to be shown: *">
+
+                  <select  >
+                    <option selected="true" disabled="disabled">City to be shown: *</option>
+                    <option value="1">Riyadh</option>
+                    <option value="2">Jeddah</option>
+                  </select>
+                  <!--<textarea name="address" placeholder="Address"></textarea>-->
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
+                  <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                  <h2 class="fs-title">Choose keg details</h2>
+                  <h3 class="fs-subtitle">Last Step</h3>
+                  <label class="fieldlabels">Total Amount: </label> <input type="text" placeholder="300 SAR" style="pointer-events: none;"/>
+
+                  <select  class="urCard" style="width:200px ;display:flex; text-align:left">
+                    <option selected="true" disabled="disabled" >Your Credit Card: *</option>
+                    <option value="1">Visa</option>
+                  </select>
+                  <a href="#" id="myBtn">Add Credit Card</a>
+                  <br>
+                  <div id="myModal" class="modal">
+
+                    <!--Credit Card Modal -->
+                    <div class="modal-content" id="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Add Your Card Details</p>
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="credit col-12">
+                                        
+                                        <input type="text" placeholder="Card number *" class="creditInput" >
+                                    </div>
+        
+                                    <div class="credit col-12">
+                                        
+                                        <input type="text" placeholder="Card Holders *"  class="creditInput">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="credit col-6">
+                                        
+                                        <input type="month" placeholder="Expiration Date" class="creditInput"> 
+                                    </div>
+        
+                                    
+        
+                                    <div class="credit col-6">
+                                        
+                                        <input type="text" placeholder="CVV" class="CVVinput">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                </div>
+                  
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
+                  <input type="submit" name="submit" class="submit action-button" value="Submit" id="form-submit" />
+                </fieldset>
+              </form>
+              <!-- jQuery -->
+              <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+              <!-- jQuery easing plugin -->
+              <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+              <script src="js/steps.js" type="text/javascript"></script>
+              <script src="js/modal.js" type="text/javascript"></script>
+
+              
+              <!--UPLOAD BUTTON-->
+              <script> 
+                const actualBtn = document.getElementById('actual-btn');
+
+                const fileChosen = document.getElementById('file-chosen');
+
+                actualBtn.addEventListener('change', function(){
+                  fileChosen.textContent = this.files[0].name
+                })
+              </script>
+        </div>
+    </section>
+  </body>
+</html>

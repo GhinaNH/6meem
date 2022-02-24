@@ -1,0 +1,444 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* text-decoration: none;
+    list-style: none;
+    box-sizing: border-box; */
+  }
+  body{
+    font-family: montserrat, arial, verdana;
+  }
+  nav{
+    background: #fff;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+  .logo img{
+      width: 9rem;
+      margin-bottom: 2rem;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  a.active,a:hover{
+    background: #a91315;
+    transition: .5s;
+    color:white
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    nav ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+  /*basic reset*/
+  
+  
+  /******************************************************************************************/
+  ._container{
+    
+  }
+  
+  #notComplete, #submitGood, #dbError {
+    display:none;
+  }
+  #results {
+    margin: 0 auto;
+    text-align:center;
+    width:600px;
+    margin-top:50px;
+    color:#222;
+  }
+  
+  /*form styles*/
+  #msform {
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+  }
+  #msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    
+    /*stacking fieldsets above each other*/
+    position: absolute;
+  }
+  /*Hide all except first fieldset*/
+  #msform fieldset:not(:first-of-type) {
+    display: none;
+  }
+  /*inputs*/
+  #msform input, #msform textarea, #msform select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    /* font-family: montserrat; */
+    color: #222;
+    font-size: 13px;
+  }
+  /*buttons*/
+  #msform .action-button {
+    width: 100px;
+    background: #a91315;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+  }
+  #msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #DA4453;
+  }
+  /*headings*/
+  .fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  .fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  /*progressbar*/
+  #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+  }
+  #progressbar .LI {
+    list-style-type: none;
+    color: #222;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 25%;
+    float: left;
+    position: relative;
+  }
+  #progressbar .LI:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #FFF;
+    background: #222;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+  }
+  /*progressbar connectors*/
+  #progressbar .LI:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #222;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+  }
+  #progressbar .LI:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+  }
+  /*marking active/completed steps green*/
+  /*The number of the step and the connector before it = green*/
+  #progressbar .LI.active:before,  #progressbar .LI.active:after{
+    background: #DA4453;
+    color: black;
+  }
+/*********************************************checkboxes**************************************/
+  /* ._container {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  } */
+  ._container h2 {
+    font-size:25px;
+    color:#888;
+    text-align:center;
+  }
+  ._container .list {
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    max-width:650px;
+  }
+  .form-element {
+    position:relative;
+    width:100px;
+    height:100px;
+  }
+  .form-element input {
+    display:none;
+  }
+  .form-element label {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    height:100%;
+    cursor:pointer;
+    border:2px solid #ddd;
+    background:#fff;
+    /* box-shadow:0px 5px 20px 2px rgba(0,0,0,0.1); */
+    text-align:center;
+    transition:all 200ms ease-in-out;
+    border-radius:5px;
+  }
+  .form-element .icon {
+    margin-top:10px;
+    font-size:30px;
+    color:#555;
+    transition:all 200ms ease-in-out;
+  }
+  .form-element .title {
+    font-size:15px;
+    color:#555;
+    padding:5px 0px;
+    transition:all 200ms ease-in-out;
+  }
+  .form-element label:before {
+    content:"✓";
+    position:absolute;
+    width:18px;
+    height:18px;
+    top:8px;
+    left:8px;
+    background:#000;
+    color:#fff;
+    text-align:center;
+    line-height:18px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:50%;
+    opacity:0;
+    transform:scale(0.5);
+    transition:all 200ms ease-in-out;
+  }
+  .form-element input:checked + label:before {
+    opacity:1;
+    transform:scale(1);
+  }
+  .form-element input:checked + label .icon {
+    color:#a91315;
+  }
+  .form-element input:checked + label .title {
+    color:#a91315
+  }
+  .form-element input:checked + label {
+    border:2px solid #000;
+  }
+
+  @media screen and (max-width:600px) {
+    #msform {
+      
+      width: 100%;
+      
+    }
+  }
+
+/************************SECONDE TAB****************************/
+.uploadFile input[type="file"]{
+  display: none;
+}
+/* .uploadFile label {
+  border: 2px solid #a91315;
+  color: #a91315;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+ } */
+ .uploadFile label {
+  background-color: #a91315;
+  color: white;
+  padding: 0.5rem;
+  /* font-family: sans-serif; */
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  /* font-family: sans-serif; */
+}
+.fieldlabels{
+  color: gray;
+  display: flex;
+  text-align: left;
+  font-size: 12px;
+
+}
+#myBtn{
+  color:gray;
+  display: flex;
+  text-align: left;
+  width: 200px;
+  text-decoration: none;
+  transition: .3s;
+  font-size: 13px;
+}
+#myBtn:hover{
+  background: transparent;
+  border:2px solid #000;
+  color:#000;
+  padding:1em 2rem;
+}
+/**************************ADD CREDIT CARD***************************/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: left;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+#modal-content{width: 40%;}
+#myModal  .creditInput{
+  width:300px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+#myModal .CVVinput{
+  width: 150px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
